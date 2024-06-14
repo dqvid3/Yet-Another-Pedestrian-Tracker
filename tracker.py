@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment
-from Track import Track
+from track import Track
 import cv2
 from utils import compute_cost_matrix
 import torch

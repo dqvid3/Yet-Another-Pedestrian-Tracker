@@ -3,7 +3,7 @@ import os
 import time
 from PIL import Image
 from detr import detect, extract_roi_features
-from Tracker import Tracker
+from tracker import Tracker
 
 
 def save_cache(cache_path, video_cache):
