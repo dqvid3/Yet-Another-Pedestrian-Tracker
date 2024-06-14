@@ -1,7 +1,8 @@
 # Yet-Another-Pedestrian-Tracker
 This repository contains a simple pedestrian tracker implemented as an assignment for the Computer Vision course attended at [UniPa](https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriainformatica2035/?template=responsive&pagina=insegnamento&idInsegnamento=171775&idDocente=155776&idCattedra=167762). <br/>
-The tracker uses Facebook's DETR for detection and computes the cost matrix that then will be passed to the Hungarian algorithm to make associations(linear_sum_assignment). The Cost Matrix is computed using both IoU between previous tracks and current detections and cosine similarity between features. These similarity measures are transformed into distances since we need a Cost Matrix input for the linear_sum_assignment.
-To extract visual features of pedestrians it recycles DETR's CNN outputs and then computes a RoiAlign on each bounding box from the detection phase.
+The tracker uses Facebook's DETR for detection and computes the cost matrix that then will be passed to the Hungarian algorithm to make associations(linear_sum_assignment). <br/>
+The Cost Matrix is computed using both IoU between previous tracks and current detections and cosine similarity between features. These similarity measures are transformed into distances since we need a Cost Matrix input for the linear_sum_assignment. <br/>
+To extract visual features of pedestrians it recycles DETR's CNN outputs and then computes a RoiAlign on the bounding boxes from the detection phase.
 
 ## Tracker Policy
 The tracker uses several hyperparameters:
@@ -11,6 +12,7 @@ The tracker uses several hyperparameters:
 - **iou_cosine_threshold**: Weight parameter for balancing IoU and cosine similarity in the cost matrix.
 - **cost_matrix_threshold**: Threshold for deciding when to associate a detection with a previous frame.
 - **DETR confidence threshold**: Confidence level used for accepting pedestrian detections from DETR.
+
 ## Limitations
 The tracker does not account for camera motion and suffers from computational slowness when processing video due to its methodology.
 
