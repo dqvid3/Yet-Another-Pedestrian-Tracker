@@ -1,5 +1,5 @@
 # Yet-Another-Pedestrian-Tracker
-This repository contains a simple pedestrian tracker implemented as an assignment for the Computer Vision course attended at [UniPa](https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriainformatica2035/?template=responsive&pagina=insegnamento&idInsegnamento=171775&idDocente=155776&idCattedra=167762). <br/>
+This repository contains a simple pedestrian tracker developed as an assignment for the [Computer Vision](https://www.unipa.it/dipartimenti/ingegneria/cds/ingegneriainformatica2035/?template=responsive&pagina=insegnamento&idInsegnamento=171775&idDocente=155776&idCattedra=167762) course for master's degree in Artificial Intelligence at [University of Palermo](https://www.unipa.it/). <br/>
 The tracker uses Facebook's DETR for detection and computes the cost matrix that then will be passed to the Hungarian algorithm to make associations(linear_sum_assignment). <br/>
 The Cost Matrix is computed using both IoU between previous tracks and current detections and cosine similarity between features. These similarity measures are transformed into distances since we need a Cost Matrix input for the linear_sum_assignment. <br/>
 To extract visual features of pedestrians it recycles DETR's CNN outputs and then computes a RoiAlign on the bounding boxes from the detection phase.
